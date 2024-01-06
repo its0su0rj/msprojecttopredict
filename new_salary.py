@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jan  6 23:56:09 2024
-
-@author: sujee
 """
 
 import pandas as pd
@@ -18,8 +15,8 @@ import streamlit as st
 
 
 # loading the saved model
-loaded_model = pickle.load(open('C:/Users/sujee/Downloads/mineproject/trained_model.sav', 'rb'))
-#loaded_model = pickle.load(open('trained_model.sav', 'rb'))
+#loaded_model = pickle.load(open('C:/Users/sujee/Downloads/mineproject/trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('trained_model.sav', 'rb'))
 
 def diabetes_prediction(input_data):
     # changing the input_data to numpy array
@@ -56,7 +53,7 @@ def validate_input(value):
         if numeric_value <= 0:
             st.warning("Bhut chhoti expectation hai")
             return False
-        elif numeric_value > 10:
+        elif numeric_value > 10:    
             st.warning("Bhai/Dost (for girls) shi value enter kre")
             return False
         return True
@@ -67,6 +64,7 @@ def validate_input(value):
 
 filename = 'finalized_model.sav'
 model = pickle.load(open(filename, 'rb'))
+
 
 
 
